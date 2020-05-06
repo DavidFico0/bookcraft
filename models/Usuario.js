@@ -28,12 +28,11 @@ const Usuario = (sequelize, DataTypes) => {
   );
 
   usuario.associate = (models) => {
-    //usuario.hasMany(models.Endereco, { foreignKey: 'fk_usuario', as: 'enderecos' });
-    //usuario.hasMany(models.Pedido, { foreignKey: 'fk_usuario', as: 'pedidos' });
+    usuario.hasMany(models.Endereco, { foreignKey: 'fk_usuario', as: 'enderecos' });
+    usuario.hasMany(models.Pedido, { foreignKey: 'fk_usuario', as: 'pedidos' });
   };
 
   return usuario;
 
 };
-
 module.exports = Usuario;
